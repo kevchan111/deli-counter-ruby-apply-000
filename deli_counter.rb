@@ -6,7 +6,7 @@ katz_deli = []
    else
      output = "The line is currently: "
      katz_deli.each_with_index {|name , position|
-       output += "#{position+1}. #{name} "
+       output += "#{position+1}. #{name}"
      }
      return output
    end
