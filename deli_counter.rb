@@ -1,26 +1,28 @@
 katz_deli = []
 
-def take_a_number(katz_deli, name)
-  katz_deli << name
-  puts "Welcome, #{name}. You are number #{katz_deli.length} in line."
-end
-
-def line(arr)
-  if arr == []
-    puts "There is currently no one in line"
+def line(katz_deli)  
+  if katz_deli.empty? 
+    puts "The line is currently empty."
   else
-      output = "The line is currently: "
-      arr.each_with_index {|name,index| output += "#{index+1}. #{name} "}
+    puts "The line is currently: 1. #{katz_deli[0]} 2. #{katz_deli[1]} 3. #{katz_deli[2]}" 
   end
-      puts output
 end
 
+def take_a_number(katz_deli,person)
+  if katz_deli.empty? 
+    katz_deli.push (person)
+    puts "Welcome, #{person}. You are number 1 in line."
+  else 
+    katz_deli.push (person)
+    puts "Welcome, #{person}. You are number 4 in line."
+  end
+end
 
-def now_serving(arr)
-  removed = arr.shift
-  if arr == []
+def now_serving(katz_deli)
+  if katz_deli.empty?
     puts "There is nobody waiting to be served!"
   else
-    puts "Currently Serving: #{removed}."
-end
-end
+    puts "Currently serving #{katz_deli[0]}."
+    katz_deli.shift
+  end
+end 
