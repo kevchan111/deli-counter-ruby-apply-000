@@ -8,7 +8,7 @@ katz_deli = []
      katz_deli.each_with_index {|name , position|
        output += "#{position+1}. #{name} "
      }
-     puts output
+     return output
    end
 end
 
